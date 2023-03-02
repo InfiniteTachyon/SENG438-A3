@@ -105,7 +105,7 @@ Method: 87.1% to 89.2%
 
 For this test, the second parameter was given to be a negative number. As, this will satisfy one of the branches such that 3/4 statements are covered. This means more line coverage than if a positive number was tested. Thus, maximizing coverage for a single test.
 
-# 5 Report of the coverage achieved of each class and method
+# 5 Report of the coverage achieved of each class and method used
 ---------------------------------------------------------------------------------------
 Datautilities Statement Coverage
 ![](media/DataUtilitiesStatement.jpg)
