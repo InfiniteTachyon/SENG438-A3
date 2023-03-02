@@ -115,6 +115,40 @@ public class RangeTest {
     	assertEquals("Incorrect constrain returned.", 6, actual, .000000001d);
     }
     
+    /**
+     * Testing combine(Range, Range)
+     */
+    @Test
+    public void testCombining2NullRange() {
+    	Range a = null;
+    	Range b = null;
+    	Range actual = Range.combine(a, b);
+    	assertNull("Returned object should be null.", actual);
+    	
+    }
+    
+    @Test
+    public void testCombining1NullAnd1Range() {
+    	myTester = new Range(5,10);
+    	Range actual = Range.combine(null, myTester);
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testCombining1RangeAnd1Null() {
+    	Range actual = Range.combine(new Range(5,10), null);
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testCombining2Ranges() {
+    	Range actual = Range.combine(new Range(5,10), new Range(-2,7)); 
+    	assertEquals("Incorrect lower bound for object.", -2, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
     //Testing Contains
     
     //Testing values that are in the range
