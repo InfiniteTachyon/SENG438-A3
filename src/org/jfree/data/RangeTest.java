@@ -15,6 +15,7 @@ public class RangeTest {
     private Range sameValuesRange;
     private Range smallest;
     private Range largest;
+    private Range myTester;
     
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
@@ -31,6 +32,19 @@ public class RangeTest {
     	largest = new Range(Double.MAX_VALUE - 1, Double.MAX_VALUE);
     	
     }
+    
+    /**
+     * Testing Range Constructor
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void constructWithLowerGreaterThanUpper() {
+    	myTester = new Range(5,-1);
+    	assertNull("Constructor should have thrown exception, and object should be NULL.", myTester);
+    }
+    
+    
+    
+    
     
     //Testing Contains
     
