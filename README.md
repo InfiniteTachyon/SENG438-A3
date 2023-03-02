@@ -111,7 +111,7 @@ Datautilities Statement Coverage
 ![](media/DataUtilitiesStatement.jpg)
 Datautilities Branch Coverage
 ![](media/DataUtilitiesBranch.jpg)
-Datautilities Method Coverage
+Datautilities Method Coverage  
 ![](media/DataUtilitiesMethod.jpg)
 
 
