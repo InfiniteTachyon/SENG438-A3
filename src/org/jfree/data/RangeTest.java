@@ -149,6 +149,42 @@ public class RangeTest {
     	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
     }
     
+    
+    /**
+     * Testing combineIgnoringNaN(Range, Range)
+     */
+    @Test
+    public void testCombineNaNWith2Null() {
+    	Range actual = Range.combineIgnoringNaN(null, null);
+    	assertNull("Returned object should be null.", actual);
+    }
+    
+    @Test
+    public void testCombiningNaNWith1Null1NaNRange() {
+    	Range actual = Range.combineIgnoringNaN(null,  new Range(Double.NaN, Double.NaN));
+    	assertNull("Returned object should be null.", actual);
+    }
+    
+    @Test
+    public void testCombiningNaNWith1Null1Range() {
+    	Range actual = Range.combineIgnoringNaN(null, new Range(5, 10));
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testCombiningNaNWith1NaN1Null() {
+    	Range actual = Range.combineIgnoringNaN(new Range(Double.NaN, Double.NaN), null);
+    	assertNull("Returned object should be null.", actual);
+    }
+    
+    @Test
+    public void testCombiningNaNWith2NaN() {
+    	Range actual = Range.combineIgnoringNaN(new Range(Double.NaN,Double.NaN), new Range(Double.NaN,Double.NaN));
+    	assertNull("Returned object should be null.", actual);
+    }
+    
+    
     //Testing Contains
     
     //Testing values that are in the range
