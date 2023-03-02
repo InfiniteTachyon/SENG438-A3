@@ -191,6 +191,32 @@ public class RangeTest {
     	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
     }
     
+    
+    /**
+     * Testing expandToInclude(Range, double)
+     */
+    @Test
+    public void testExpandToIncludeWithNullRange() {
+    	Range actual = Range.expandToInclude(null, 0);
+    	assertEquals("Incorrect lower bound for object.", 0, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 0, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testExpandToIncludeWithValueGreaterThanUpper() {
+    	Range actual = Range.expandToInclude(exampleRange, 10);
+    	assertEquals("Incorrect lower bound for object.", -1, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testExpandToIncludeWithValueInRange() {
+    	Range actual = Range.expandToInclude(secondRange, 10);
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 30, actual.getUpperBound(), .000000001d);
+    }
+    
+    
     //Testing Contains
     
     //Testing values that are in the range
