@@ -43,8 +43,77 @@ public class RangeTest {
     }
     
     
+    /**
+     * Testing intersects(double, double)
+     */
+    @Test
+    public void testIntersectsWithNumberLowerThanLowerBound() {
+    	myTester = new Range(5,10);
+    	boolean actual = myTester.intersects(3,12);
+    	assertTrue("The given range intersects with Range object.",actual);
+    }
     
+    @Test
+    public void testIntersectsWithNumberGreaterThanLowerBound() {
+    	myTester = new Range(5,10);
+    	boolean actual = myTester.intersects(6,12);
+    	assertTrue("The given range intersects with Range object.",actual);
+    }
     
+    @Test
+    public void testIntersectsWithRangeLessThanObject() {
+    	myTester = new Range(5, 10);
+    	boolean actual = myTester.intersects(1,3);
+    	assertFalse("The given range does not intersect with Range object.", actual);
+    }
+    
+    @Test
+    public void testIntersectsWithRangeGreaterThanObject() {
+    	myTester = new Range(5, 10);
+    	boolean actual = myTester.intersects(11,30);
+    	assertFalse("The given range does not intersect with Range object.", actual);
+    }
+    
+    /**
+     * Testing intersects(Range)
+     */    
+    @Test
+    public void testIntersectsWithRangeInRange() {
+    	myTester = new Range(5, 10);
+    	boolean actual = secondRange.intersects(myTester);
+    	assertTrue("The given Range object does intersect with this Range object.",actual);
+    }
+    
+    @Test
+    public void testIntersectsWithRangeNotInRange() {
+    	myTester = new Range(-20,0);
+    	boolean actual = secondRange.intersects(myTester);
+    	assertFalse("The given Range object does not intersect with this Range object.", actual);
+    }
+    
+    /**
+     * Testing constrain(double)
+     */
+    @Test
+    public void testConstrainWithValueSmallerThanLower() {
+    	myTester = new Range(5, 10);
+    	double actual = myTester.constrain(0);
+    	assertEquals("Incorrect constrain returned.", 5, actual, .000000001d);
+    }
+    
+    @Test
+    public void testConstrainWithValueGreaterThanUpper() {
+    	myTester = new Range(5, 10);
+    	double actual = myTester.constrain(15);
+    	assertEquals("Incorrect constrain returned.", 10, actual, .000000001d);
+    }
+    
+    @Test
+    public void testConstrainWithValueInRange() {
+    	myTester = new Range(5, 10);
+    	double actual = myTester.constrain(6);
+    	assertEquals("Incorrect constrain returned.", 6, actual, .000000001d);
+    }
     
     //Testing Contains
     
