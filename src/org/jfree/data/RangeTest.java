@@ -281,6 +281,35 @@ public class RangeTest {
     	assertEquals("Incorrect upper bound for object.", 20, actual.getUpperBound(), .000000001d);
     }
     
+    /**
+     * Testing equals(Obj)
+     */
+    
+    @Test
+    public void testingEqualsWithSameRange() {
+    	boolean actual = exampleRange.equals(new Range(-1, 1));
+    	assertTrue("Boolean returned should be true, since the given Range share same parameters. ", actual);
+    	
+    }
+    
+    @Test
+    public void testingEqualsWithNotRangeObj() {
+    	boolean actual = exampleRange.equals(new String());
+    	assertFalse("Boolean returned should be false, since the given argument is not a Range object. ", actual);
+    }
+    
+    @Test
+    public void testingEqualsWithSameUpperBound() {
+    	boolean actual = exampleRange.equals(new Range(-5, 1));
+    	assertFalse("Boolean returned should be false, not the same lower. ", actual);
+    }
+    
+    @Test
+    public void testingEqualsWithSameLower() {
+    	boolean actual = exampleRange.equals(new Range(-1, 5));
+    	assertFalse("Boolean returned should be false, not the same upper.", actual);
+    }
+    
     //Testing Contains
     
     //Testing values that are in the range
