@@ -135,4 +135,4 @@ When we worked together, we realized that it could be challenging to coordinate 
 
 # 10 Comments/feedback on the assignment itself
 ---------------------------------------------------------------------------------------
-The code setup was a hassle especially given the missing hamcrest library, which is only included in the assignment 2 code. The library importing is also a lot of work where it is easy to miss import library which will cause the code to not run properly. Beside libraries, it is also difficult to set up git repository for everyone to collaborate.  
+The code setup was a hassle especially given the missing hamcrest library, which is only included in the assignment 2 code. The library importing is also a lot of work where it is easy to miss import library which will cause the code to not run properly. Beside libraries, it is also difficult to set up git repository for everyone to collaborate.  It was a very time consuming but rewarding lab.
