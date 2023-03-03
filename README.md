@@ -31,14 +31,13 @@ The focus of this assignment is similar to the previous one, as it involves unit
 # 6 Pros and cons of the coverage tools tried by your group in this assignment
 ---------------------------------------------------------------------------------------
 
-# 7 A comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
+# 7 Comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
 ---------------------------------------------------------------------------------------
 
-
-# 8 Dscussion on how the team work/effort was divided and managed
+# 8 How the team work/effort was divided and managed
 ---------------------------------------------------------------------------------------
 
-# 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the assignment
+# 9 Difficulties encountered, challenges overcome, and lessons learned from performing the assignment
 ---------------------------------------------------------------------------------------
 
 # 10 Comments/feedback on the assignment itself
