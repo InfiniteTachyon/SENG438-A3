@@ -261,6 +261,26 @@ public class RangeTest {
     	assertEquals("Incorrect upper bound for object.", 35, actual.getUpperBound(), .000000001d);
     }
     
+    /**
+     * Testing scale(Range, double)
+     */
+    @Test
+    public void testingScaleWithFactorLessThanZero() {
+    	try {
+    		Range actual = Range.scale(new Range(0,0), -1);
+    		fail("Should have thrown an error.");
+    	} catch (IllegalArgumentException e) {
+    		assertTrue(true);
+    	}
+    }
+    
+    @Test
+    public void testingScaleWithPositiveFactor() {
+    	Range actual = Range.scale(new Range(5,10), 2);
+    	assertEquals("Incorrect lower bound for object.", 10, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 20, actual.getUpperBound(), .000000001d);
+    }
+    
     //Testing Contains
     
     //Testing values that are in the range
