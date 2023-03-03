@@ -8,7 +8,7 @@ import org.jfree.data.KeyedValues;
 import org.jfree.data.UnknownKeyException;
 import org.jfree.data.Values2D;
 import org.jmock.*;
-import org.junit.*;
+import org.junit.*;  
 
 /*
  * This test will test DataUtilites class 
