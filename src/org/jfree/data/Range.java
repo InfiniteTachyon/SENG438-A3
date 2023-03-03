@@ -64,6 +64,8 @@
 package org.jfree.data;
 
 import java.io.Serializable;
+import java.util.Objects;
+
 import org.jfree.chart.util.ParamChecks;
 
 /**
@@ -346,7 +348,7 @@ public strictfp class Range implements Serializable {
      *
      * @return The expanded range.
      */
-    public static Range expand(Range range,
+   /** public static Range expand(Range range,
                                double lowerMargin, double upperMargin) {
         ParamChecks.nullNotPermitted(range, "range");
         double length = range.getLength();
@@ -356,6 +358,22 @@ public strictfp class Range implements Serializable {
             lower = lower / 2.0 + upper / 2.0;
             upper = lower;
         }
+        return new Range(lower, upper);
+    }
+**/
+    public static Range expand(Range range, double lowerMargin, double upperMargin) {
+        Objects.requireNonNull(range, "range must not be null");
+        
+        double length = range.getLength();
+        double lower = range.getLowerBound() - length * lowerMargin;
+        double upper = range.getUpperBound() + length * upperMargin;
+        
+        if (lower > upper) {
+            double middle = (lower + upper) / 2.0;
+            lower = middle;
+            upper = middle;
+        }
+        
         return new Range(lower, upper);
     }
 
