@@ -216,6 +216,50 @@ public class RangeTest {
     	assertEquals("Incorrect upper bound for object.", 30, actual.getUpperBound(), .000000001d);
     }
     
+    /**
+     * Testing expand(Range, double, double)
+     */
+    @Test
+    public void testExpand0LowerAnDNegativeUpper() {
+    	Range actual = Range.expand(new Range(5,10), 0, -5);
+    	assertEquals("Incorrect lower bound for object.", -5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", -5, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testExpandNormalRange() {
+    	Range actual = Range.expand(new Range(5,10), 0, 0);
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 10, actual.getUpperBound(), .000000001d);
+    }
+    
+    
+    /**
+     * Testing shift(Range, double, boolean)
+     */
+    @Test
+    public void testShiftTrueBoolean() {
+    	Range actual = Range.shift(secondRange, 5, true);
+    	assertEquals("Incorrect lower bound for object.", 10, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 35, actual.getUpperBound(), .000000001d);
+    }
+    
+    @Test
+    public void testShiftFalseBoolean() {
+    	Range actual = Range.shift(new Range(0,30), 5, false);
+    	assertEquals("Incorrect lower bound for object.", 5, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 35, actual.getUpperBound(), .000000001d);
+    }
+    
+    /**
+     * Testing shift(Range, double)
+     */
+    @Test
+    public void testShift() {
+    	Range actual = Range.shift(secondRange, 5);
+    	assertEquals("Incorrect lower bound for object.", 10, actual.getLowerBound(), .000000001d);
+    	assertEquals("Incorrect upper bound for object.", 35, actual.getUpperBound(), .000000001d);
+    }
     
     //Testing Contains
     
