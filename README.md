@@ -1,6 +1,6 @@
 **SENG 438 - Software Testing, Reliability, and Quality**
 
-**Lab. Report \#3 
+**Lab. Report \#3**
 
 | Group \#:      |  13 |
 | -------------- | --- |
@@ -18,8 +18,28 @@ In this lab, we will expan our unit test suite based on the previous lab. The te
 
 # 2 Manual data-flow coverage calculations
 ---------------------------------------------------------------------------------------
+![](media/DFD_Range.png)
 
 
+
+|Variable|Define At Node|dcu|dpu|
+|---|---|---|---|
+|range1| 1| {4,5,6}| {(1,2), (1,3)}|
+|range2| 1| {2,5,6}| {(3,4), (3,5)}|
+|l| 5| {5,7}| { }|
+|u| 6| {6,7}| { }|
+
+
+|Test|Covered Pairs|
+|---|---|
+|testCombining2NullRange| dcu{2}, dpu{(1,2)}|
+|testCombining1NullAnd1Range| dcu{2}, dpu{(1,2)}|
+|testCombining1RangeAnd1Null| dcu{4}, dpu{(3,4)}|
+|testCombining2Ranges| dcu{5,6,7}, dpu{(1,3),(3,5)}
+
+
+
+DU-Pair coverage: CU = 10 PU = 4
 
 ![](media/DFDcalculateColumnTotal.jpg)
 
