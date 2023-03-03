@@ -12,7 +12,7 @@
 
 # 1 Introduction
 
-The focus of this assignment is similar to the previous one, as it involves unit testing using JUnit in Eclipse. Students will begin by getting familiar with the testing tools before proceeding with the implementation (enhancement) of the test suite. However, this assignment differs from the previous Ass2 in that it introduces students to a new technique for deciding which test cases to develop: white-box coverage criteria.
+The focus of this assignment is similar to the previous one, as it involves unit testing using JUnit in Eclipse. Students will begin by getting familiar with the testing tools before proceeding with the implementation (enhancement) of the test suite. However, this assignment differs from the previous Ass2 in that it introduces us to a new technique for deciding which test cases to develop: white-box coverage criteria.
 
 In this lab, we will expan our unit test suite based on the previous lab. The test will also be developed based on white-box criteria, specifically in statement, branch and method coverage. This lab aim to create serveral more detailed test that fit in high percentage coverage criteria. 
 
