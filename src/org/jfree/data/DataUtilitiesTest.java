@@ -642,6 +642,38 @@ public class DataUtilitiesTest {
 	
 	@Test
 	public void getCumPercentageNull() {
+		try {
+			DataUtilities.getCumulativePercentages(null);
+			throw new Exception("Should throw Error");
+		} catch(Exception e) {
+			assertEquals("Error Thrown Correctly", e.getClass(), IllegalArgumentException.class);
+		}
+	}
+	
+	@Test
+	public void getCumPercentagewithNull() {
+		mock = new Mockery();
+		values = mock.mock(KeyedValues.class);
+		
+		mock.checking(new Expectations() {
+			{
+				atLeast(1).of(values).getValue(0);
+				will(returnValue(10));
+				atLeast(1).of(values).getKey(0);
+				will(returnValue(10));
+				atLeast(1).of(values).getValue(1);
+				will(returnValue(20));
+				atLeast(1).of(values).getKey(1);
+				will(returnValue(11));
+				atLeast(1).of(values).getValue(2);
+				will(returnValue(null));
+				atLeast(1).of(values).getKey(2);
+				will(returnValue(12));
+				atLeast(1).of(values).getItemCount();
+				will(returnValue(2));
+			}
+		});
+		assertEquals("Cumulative Percentage is not correct", 0.33333333333333, DataUtilities.getCumulativePercentages(values).getValue(0).doubleValue(), 0.0000001d );
 		
 	}
 }
