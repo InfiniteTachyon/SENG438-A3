@@ -169,8 +169,140 @@ public class DataUtilitiesTestCloneAndArray {
 	}
 	
 
+	@Test
+	public void getCumuPercentage10() {
+		
+		Mockery MockKeyedValues = new Mockery();
+		final KeyedValues data = MockKeyedValues.mock(KeyedValues.class);
+		
+		MockKeyedValues.checking(new Expectations() {{
+			atLeast(1).of(data).getItemCount();
+			will(returnValue((3)));
+			
+			atLeast(1).of(data).getValue(0);
+			will(returnValue(1));
+			
+			atLeast(1).of(data).getValue(1);
+			will(returnValue(2));
+			
+			atLeast(1).of(data).getValue(2);
+			will(returnValue(3));
+			
+			atLeast(1).of(data).getKey(0);
+			will(returnValue(10));
+			
+			atLeast(1).of(data).getKey(1);
+			will(returnValue(20));
+				
+			atLeast(1).of(data).getKey(2);
+			will(returnValue(20));
+		}});
+		
+		KeyedValues result = DataUtilities.getCumulativePercentages(data);
+		assertEquals("Should Equal", 0.1, result.getValue(0).doubleValue(), .0000001d);
+	}
 	
 	
+	@Test
+	public void getCumuPercentage50() {
+		
+		Mockery MockKeyedValues = new Mockery();
+		final KeyedValues data = MockKeyedValues.mock(KeyedValues.class);
+		
+		MockKeyedValues.checking(new Expectations() {{
+			atLeast(1).of(data).getItemCount();
+			will(returnValue((3)));
+			
+			atLeast(1).of(data).getValue(0);
+			will(returnValue(1));
+			
+			atLeast(1).of(data).getValue(1);
+			will(returnValue(2));
+			
+			atLeast(1).of(data).getValue(2);
+			will(returnValue(3));
+			
+			atLeast(1).of(data).getKey(0);
+			will(returnValue(2));
+			
+			atLeast(1).of(data).getKey(1);
+			will(returnValue(4));
+				
+			atLeast(1).of(data).getKey(2);
+			will(returnValue(6));
+		}});
+		
+		KeyedValues result = DataUtilities.getCumulativePercentages(data);
+		assertEquals("Should Equal", 0.5, result.getValue(0).doubleValue(), .0000001d);
+	}
+	
+	
+	@Test
+	public void getCumuPercentage100() {
+		
+		Mockery MockKeyedValues = new Mockery();
+		final KeyedValues data = MockKeyedValues.mock(KeyedValues.class);
+		
+		MockKeyedValues.checking(new Expectations() {{
+			atLeast(1).of(data).getItemCount();
+			will(returnValue((3)));
+			
+			atLeast(1).of(data).getValue(0);
+			will(returnValue(1));
+			
+			atLeast(1).of(data).getValue(1);
+			will(returnValue(2));
+			
+			atLeast(1).of(data).getValue(2);
+			will(returnValue(3));
+			
+			atLeast(1).of(data).getKey(0);
+			will(returnValue(1));
+			
+			atLeast(1).of(data).getKey(1);
+			will(returnValue(2));
+				
+			atLeast(1).of(data).getKey(2);
+			will(returnValue(3));
+		}});
+		
+		KeyedValues result = DataUtilities.getCumulativePercentages(data);
+		assertEquals("Should Equal", 1.0, result.getValue(0).doubleValue(), .0000001d);
+	}
+	
+	
+	@Test
+	public void getCumuPercentageNull() {
+		
+		Mockery MockKeyedValues = new Mockery();
+		final KeyedValues data = MockKeyedValues.mock(KeyedValues.class);
+		
+		MockKeyedValues.checking(new Expectations() {{
+			atLeast(1).of(data).getItemCount();
+			will(returnValue((3)));
+			
+			atLeast(1).of(data).getValue(0);
+			will(returnValue(1));
+			
+			atLeast(1).of(data).getValue(1);
+			will(returnValue(2));
+			
+			atLeast(1).of(data).getValue(2);
+			will(returnValue(null));
+			
+			atLeast(1).of(data).getKey(0);
+			will(returnValue(10));
+			
+			atLeast(1).of(data).getKey(1);
+			will(returnValue(20));
+				
+			atLeast(1).of(data).getKey(2);
+			will(returnValue(30));
+		}});
+		
+		KeyedValues result = DataUtilities.getCumulativePercentages(data);
+		assertEquals("Should Equal", 0.1, result.getValue(0).doubleValue(), .0000001d);
+	}
 	
 	
 }
