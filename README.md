@@ -55,6 +55,13 @@ __Def-pair set:__
 
 # 5 Report of the coverage achieved of each class and method
 ---------------------------------------------------------------------------------------
+Datautilities Statement Coverage
+![](media/DataUtilitiesStatement.jpg)
+Datautilities Branch Coverage
+![](media/DataUtilitiesBranch.jpg)
+Datautilities Method Coverage
+![](media/DataUtilitiesMethod.jpg)
+
 
 # 6 Pros and cons of the coverage tools tried by your group in this assignment
 ---------------------------------------------------------------------------------------
