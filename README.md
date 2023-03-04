@@ -18,7 +18,7 @@ In this lab, we will expan our unit test suite based on the previous lab. The te
 
 # 2 Manual data-flow coverage calculations
 ---------------------------------------------------------------------------------------
-
+![](media/DFDcalculateColumnTotal.jpg)
 
 # 3 Description of the testing strategy for the new unit tests
 ---------------------------------------------------------------------------------------
