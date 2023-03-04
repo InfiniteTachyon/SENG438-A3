@@ -32,6 +32,7 @@ In this lab, we will expan our unit test suite based on the previous lab. The te
 
 # 6 Pros and cons of the coverage tools tried by your group in this assignment
 ---------------------------------------------------------------------------------------
+This lab is completed useing EclEmma as the tools for measure coverage. It was easy to setup because it is integrated with eclipse IDE. The three metrics used to measure the coverage are statement(line), branch, and method. Since EclEmma does not provicde condition coverage so we switched to method coverage. Overall, EclEmma is very good tool for test coverages, it privide many other coverage measurement beside the three we choose to use. It also provide colour highlight feedback on the code for easy to find which lines of code has error. However the highlight colour might be too dark therfore it is hard to read the code. It also provide feedback on which lines of code is coveraged for statement coverage measurement, which can be helpful for us to improve test code for statement coverage. However for branch coverage, it does not provide enough information to specifit number of state, where this made improving branch coverage and debugging.  
 
 # 7 A comparison on the advantages and disadvantages of requirements-based test generation and coverage-based test generation.
 1. Advantages of Requirements-based Test Generation: The first thing is focusing on the user's needs. It ensures that the software meets the requirements and helps create test cases that cover all functional requirements. Secondly, This approach provides traceability from the requirements to test cases, making it easy to track testing progress. Moreover, It will help the software by identifying and testing all the requirements thoroughly.
@@ -48,3 +49,4 @@ When we worked together, we realized that it could be challenging to coordinate 
 
 # 10 Comments/feedback on the assignment itself
 ---------------------------------------------------------------------------------------
+The code setup was a hassle especially given the missing hamcrest library, which is only included in the assignment 2 code. The library importing is also a lot of work where it is easy to miss import library which will cause the code to not run properly. Beside libraries, it is also difficult to set up git repository for everyone to collaborate.  
