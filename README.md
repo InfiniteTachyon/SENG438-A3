@@ -18,6 +18,26 @@ In this lab, we will expan our unit test suite based on the previous lab. The te
 
 # 2 Manual data-flow coverage calculations
 ---------------------------------------------------------------------------------------
+
+Def-path set:
+
+du(1, range1) = {[1], [1,3,4], [1,3,5], [1,3,5,6]}
+du(1, range2) = {[1,2], [1,3,5], [1,3,5,6]}
+du(5, l) = {[5,6,7]}
+du(6, u) = {[6,7]}
+Def-pair set:
+
+du(1, 4, range1) = {[1,3,4]}
+du(1, 6, range1) = {[1,3,5,6]}
+du(1, 3, range2) = {[1,3]}
+du(1, 2, range2) = {[1,2]}
+du(1, 6, range2) = {[1,3,5,6]}
+du(5, 7, l) = {[5, 6, 7]}
+du(6, 7, u) = {[6,7]}
+
+CU = 10
+PU = 4
+
 ![](media/DFDcalculateColumnTotal.jpg)
 
 __Def-path set:__
@@ -44,6 +64,9 @@ __Def-pair set:__
 - du(9, 9, r) = {[9], [9,10,11,12,13,9], [9,10,11,13,9]}
 - du(10, 11, n) =  {[10,11]}
 - du(10, 12, n) = {[10,11,12]}
+
+CU = 8
+PU = 8
 
 | test | pair |
 | --- | --- |
