@@ -76,6 +76,22 @@ Method: 100% TO 100%
 
 For cloning, we did not understand before that the code uses a for loop for this code, tehrefore, for lines 102-111, we are now able to test these specific lines as they are part of the code for the for loop and if statements that are present within the code. By testing the null values, we are able to test if the loops are handling null values correctly. 
 
+4. testCombiningNaNWith1Null1Range()
+
+Branch: 49.7% to 55.9%
+Line: 55.2% to 57.4%
+Method:82.3% to 85.5%
+
+For this test, allowing the first parameter to be null, and then second one to be an acceptable Range object, 2/4 branches with 1 method. This leads to the increase in both branch coverage and line coverage. Axiomatically, method coverage also increases due to method usage.
+
+5. testingScaleWithFactorLessThanZero()
+
+Branch: 64.3% to 66.2%
+Line: 62.2% to 64.5%
+Method: 87.1% to 89.2%
+
+For this test, the second parameter was given to be a negative number. As, this will satisfy one of the branches such that 3/4 statements are covered. This means more line coverage than if a positive number was tested. Thus, maximizing coverage for a single test.
+
 # 5 Report of the coverage achieved of each class and method
 ---------------------------------------------------------------------------------------
 Datautilities Statement Coverage
