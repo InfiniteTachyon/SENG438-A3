@@ -45,6 +45,13 @@ __Def-pair set:__
 - du(10, 11, n) =  {[10,11]}
 - du(10, 12, n) = {[10,11,12]}
 
+| test | pair |
+| --- | --- |
+|calcPosColPosVal |   dpu - 3,5,7,8,9, dpu {4,5}, {4,9}, {6,7}|
+|calcPosColNegVal |  dpu - 3,5,7,8,9, dpu {4,5}, {4,9}, {6,7}|
+|calcNegCol() | dcu - 9, dpu - {1,2}, {4,9} |
+|calcColNull() |  ddcu - 9, dpu - {1,2},{4,9} |
+|calcColNullCheck() |  dpu {1,end} |
 
 # 3 Description of the testing strategy for the new unit tests
 ---------------------------------------------------------------------------------------
