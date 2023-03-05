@@ -54,24 +54,24 @@ Our plan is to determine what was already coded in our previous tests from Assig
 ---------------------------------------------------------------------------------------
 
 1. calcPosRowPosValNull()
-Branch: 20% to 62.5%
-Line: 55% to 100%
+Branch: 40% to 44.7%
+Line: 55% to 60.1%
 Method: 100% TO 100%
 
 During our previous tests, we did not account for a lot of the branches that could have occured within the function, whether this be positive or negativeNumbers, by adding these new test cases that allowed for the testing of nulls, positvie and negatie numbers, we are able to establish more tests that covers a greater range of branches that was not present before. 
 
 2. getCumPercentageTestOne() 
 
-Branch: 15% to 75%
-Line: 55% to 85.2%
+Branch: 19% to 25.9%
+Line: 55% to 74.6%
 Method: 100% TO 100%
 
 Before, this did not test much of the functions as we did not have access to the code, so the tests previously based off our own knowledge of how cumulative percentages are supposed to work. Now with the new code, we are able to determine how the files are supposed to work and what branches can be used to cover, ex . how KeyedValues works and why they are sued in cumulative percentage
 
 3. cloneTestTwoEmpty()
 
-Branch: 50% to 75%
-Line: 55% to 100%
+Branch: 50% to 53.5%
+Line: 55% to 76.9%
 Method: 100% TO 100%
 
 For cloning, we did not understand before that the code uses a for loop for this code, tehrefore, for lines 102-111, we are now able to test these specific lines as they are part of the code for the for loop and if statements that are present within the code. By testing the null values, we are able to test if the loops are handling null values correctly. 
