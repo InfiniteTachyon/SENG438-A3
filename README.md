@@ -115,6 +115,7 @@ This lab is completed useing EclEmma as the tools for measure coverage. It was e
 
 # 8 Dscussion on how the team work/effort was divided and managed
 ---------------------------------------------------------------------------------------
+Depending on We have four people to do this lab, and we divided two into tiny groups working on DataUtilies and Range, respectively. We did those work individually and updated information through Discord. If anyone got into a problem, they asked for help on Discord, and one of us will follow up and help him troubleshoot until this issue was solved.
 
 # 9 Any difficulties encountered, challenges overcome, and lessons learned from performing the assignment
 When we worked together, we realized that it could be challenging to coordinate schedules and ensure that everyone is working on the same page. Also, we found that Writing practical JUnit tests with a clear understanding of the codebase can be more accessible, which may lead to ineffective tests or false positives. On the other hand, we can overcome coordination issues by maintaining open communication channels and regularly checking in on each other's progress. Additionally, Writing practical JUnit tests is crucial for ensuring software quality and detecting defects early in the development process, and it helps us better understand this knowledge.
